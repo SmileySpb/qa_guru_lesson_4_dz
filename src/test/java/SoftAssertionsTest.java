@@ -25,14 +25,4 @@ public class SoftAssertionsTest {
         wikiBody.scrollIntoView(true);
         wikiBody.$("#wiki-content ol[start='3']").shouldHave(text("Using JUnit5 extend test class:"));
     }
-
-    @Test
-    public void dragAndDropTest() {
-        open("https://the-internet.herokuapp.com/drag_and_drop");
-        SelenideElement dragElement = $("#column-a");
-        SelenideElement dropElement = $("#column-b");
-        // Doesn't work
-        dragElement.dragAndDropTo(dropElement);
-        dragElement.dragAndDropTo("#column-b");
-    }
 }
