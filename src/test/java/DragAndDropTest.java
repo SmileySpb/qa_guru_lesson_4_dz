@@ -1,6 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -13,5 +14,7 @@ public class DragAndDropTest {
         // Doesn't work
         dragElement.dragAndDropTo(dropElement);
         dragElement.dragAndDropTo("#column-b");
+        dragElement.shouldHave(text("B"));
+        dropElement.shouldHave(text("A"));
     }
 }
